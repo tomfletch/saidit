@@ -3,6 +3,7 @@ import styles from './NavBar.module.css';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import Link from 'next/link';
+import { NavUserMenu } from '../NavUserMenu';
 
 export const NavBar: FC = async () => {
   const session = await getServerSession(authOptions);
@@ -14,9 +15,7 @@ export const NavBar: FC = async () => {
       </div>
       <div className={styles.navEnd}>
         {session?.user ? (
-          <>
-            <div>Signed in as {session.user.name}</div>
-          </>
+          <NavUserMenu user={session.user} />
         ) : (
           <Link href='/sign-in'>Sign In</Link>
         )}

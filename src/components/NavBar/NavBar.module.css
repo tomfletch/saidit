@@ -1,0 +1,14 @@
+.navBar {
+  background-color: #161b21;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.navStart {
+  flex: 1 1 auto;
+}
+
+.navEnd {
+  flex: 0 1 auto;
+}

@@ -12,3 +12,11 @@
 .navEnd {
   flex: 0 1 auto;
 }
+
+.logoLink {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}

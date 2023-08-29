@@ -4,15 +4,27 @@ import styles from './Button.module.css';
 
 type ButtonProps = {
   isLoading?: boolean;
+  isFullWidth?: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ isLoading = false, children, className = '', ...props }, ref) => {
+  (
+    {
+      isLoading = false,
+      isFullWidth = false,
+      children,
+      className = '',
+      ...props
+    },
+    ref,
+  ) => {
     return (
       <button
         ref={ref}
         disabled={isLoading}
-        className={`${styles.button} ${className}`}
+        className={`${styles.button} ${
+          isFullWidth ? styles.fullWidth : ''
+        } ${className}`}
         {...props}
       >
         {children}

@@ -8,7 +8,7 @@ import { Avatar } from '../Avatar';
 import styles from './NavUserMenu.module.css';
 
 type NavUserMenuProps = {
-  user: Pick<User, 'name' | 'image'>;
+  user: Pick<User, 'name' | 'image' | 'email'>;
 };
 
 export const NavUserMenu: FC<NavUserMenuProps> = ({ user }) => {
@@ -25,9 +25,16 @@ export const NavUserMenu: FC<NavUserMenuProps> = ({ user }) => {
       </button>
       {isDropdownOpen && (
         <div className={styles.dropdown}>
-          <div>Signed in as {user.name} </div>
-          <div>
+          <div className={styles.dropdownSection}>
+            <div>{user.name}</div>
+            <div className={styles.email}>{user.email}</div>
+          </div>
+          <div className={styles.dropdownSection}>
+            <Button isFullWidth>Create a Channel</Button>
+          </div>
+          <div className={styles.dropdownSection}>
             <Button
+              isFullWidth
               onClick={() =>
                 signOut({ callbackUrl: `${window.location.origin}` })
               }

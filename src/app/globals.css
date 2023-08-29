@@ -3,3 +3,7 @@ body {
   color: #eff5fb;
   background-color: #0d1116;
 }
+
+.container {
+  padding: 1rem;
+}

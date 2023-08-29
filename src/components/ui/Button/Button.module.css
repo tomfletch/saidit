@@ -11,6 +11,10 @@
   overflow: hidden;
 }
 
+.fullWidth {
+  width: 100%;
+}
+
 .button:not([disabled]):hover,
 .button:focus-visible {
   background-color: #30363d;

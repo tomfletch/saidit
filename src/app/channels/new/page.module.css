@@ -1,0 +1,29 @@
+.inputContainer {
+  --padding: 0.5rem;
+  --padding-left: 0.75rem;
+  --border-width: 1px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.inputPrefix {
+  position: absolute;
+  left: var(--padding-left);
+  top: calc(var(--border-width) + var(--padding));
+  color: hsl(212, 12%, 80%);
+}
+
+.inputContainer {
+  margin-bottom: 1rem;
+}
+
+.inputContainer input {
+  font-size: 1rem;
+  line-height: inherit;
+  padding: var(--padding);
+  padding-left: calc(var(--padding-left) + 1rem);
+  background-color: rgb(13, 17, 23);
+  border: var(--border-width) solid rgb(48, 54, 61);
+  border-radius: 6px;
+  color: white;
+}

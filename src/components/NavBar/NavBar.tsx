@@ -11,13 +11,13 @@ export const NavBar: FC = async () => {
 
   return (
     <div className={styles.navBar}>
-      <div className={styles.navStart}>
+      <div>
         <Link href='/' className={styles.logoLink}>
           <BiSolidCommentDetail size='24' />
           <span>saidit</span>
         </Link>
       </div>
-      <div className={styles.navEnd}>
+      <div>
         {session?.user ? (
           <NavUserMenu user={session.user} />
         ) : (

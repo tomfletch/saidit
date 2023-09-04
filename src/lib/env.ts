@@ -2,6 +2,7 @@ import { z } from 'zod';
 
 const envSchema = z.object({
   NODE_ENV: z.enum(['development', 'production']).default('development'),
+  DATABASE_URL: z.string().nonempty(),
   AUTH_GOOGLE_ID: z.string().nonempty(),
   AUTH_GOOGLE_SECRET: z.string().nonempty(),
 });

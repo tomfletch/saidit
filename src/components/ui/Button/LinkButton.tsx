@@ -1,13 +1,14 @@
 import React from 'react';
 import { VscLoading } from 'react-icons/vsc';
 import styles from './Button.module.css';
+import Link from 'next/link';
 
-type ButtonProps = {
+type LinkButtonProps = {
   isLoading?: boolean;
   isFullWidth?: boolean;
-} & React.ComponentProps<'button'>;
+} & React.ComponentProps<typeof Link>;
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+export const LinkButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
   (
     {
       isLoading = false,
@@ -19,9 +20,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref,
   ) => {
     return (
-      <button
+      <Link
         ref={ref}
-        disabled={isLoading}
         className={`${styles.button} ${
           isFullWidth ? styles.fullWidth : ''
         } ${className}`}
@@ -33,9 +33,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             <VscLoading />
           </div>
         )}
-      </button>
+      </Link>
     );
   },
 );
 
-Button.displayName = 'Button';
+LinkButton.displayName = 'LinkButton';

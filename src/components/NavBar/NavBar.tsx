@@ -5,6 +5,7 @@ import { authOptions } from '@/lib/auth';
 import Link from 'next/link';
 import { NavUserMenu } from '../NavUserMenu';
 import { BiSolidCommentDetail } from 'react-icons/bi';
+import { LinkButton } from '../ui/Button/LinkButton';
 
 export const NavBar: FC = async () => {
   const session = await getServerSession(authOptions);
@@ -21,7 +22,7 @@ export const NavBar: FC = async () => {
         {session?.user ? (
           <NavUserMenu user={session.user} />
         ) : (
-          <Link href='/sign-in'>Sign In</Link>
+          <LinkButton href='/sign-in'>Sign In</LinkButton>
         )}
       </div>
     </div>

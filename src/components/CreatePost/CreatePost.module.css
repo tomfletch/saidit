@@ -1,0 +1,25 @@
+.createPost {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  background-color: #161b21;
+  padding: 1rem;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.createPost h2 {
+  margin: 0;
+}
+
+.createPost input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.createPost textarea {
+  box-sizing: border-box;
+  width: 100%;
+  resize: vertical;
+}
